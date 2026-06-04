@@ -31,7 +31,7 @@ fi
 
 # inject parameters
 for pynb in $(ls notebooks/*ipynb); do
-  papermill -f params.yml $pynb $(basename $pynb)
+  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
 done
 
 # build the book
