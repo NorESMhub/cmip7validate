@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : NorESM3spinup  # The title of the book. Will be placed in the left navbar.
+title                       : cmip7validate  # The title of the book. Will be placed in the left navbar.
 author                      : Yanchun He  # The author of the book
 copyright                   : "2026"  # Copyright year to be placed in the footer
-logo                        : noresm.png  # A path to the book logo
+logo                        : noresm3validation.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
