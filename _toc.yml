@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+  - file: ocean_fx
   - file: ocean_1D
   - file: ocean_2D
   - file: ocean_3D
