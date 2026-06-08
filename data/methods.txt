@@ -4,7 +4,7 @@
 'ocean.agessc.tavg-ol-hxy-sea.mon.glb'          : {'mth': 'None'}
 'ocean.areacello.ti-u-hxy-u.fx.glb'             
 'ocean.basin.ti-u-hxy-u.fx.glb'                 
-'ocean.deptho.ti-u-hxy-sea.fx.glb'              
+'ocean.deptho.ti-u-hxy-sea.fx.glb'              : {'cmap': 'cmocean.cm.deep'}
 'ocean.diftrblo.tavg-ol-hxy-sea.yr.glb'         : {'mth': 'None'}
 'ocean.diftrelo.tavg-ol-hxy-sea.yr.glb'         : {'mth': 'None'}
 'ocean.difvho.tavg-ol-hxy-sea.yr.glb'           : {'mth': 'None'}
@@ -74,7 +74,7 @@
 'ocean.thetao.tavg-ol-hxy-sea.mon.glb'          : {'cmap': 'cmocean.cm.thermal'}
 'ocean.thetaot.tavg-u-hxy-sea.mon.glb'          : {'cmap': 'cmocean.cm.thermal'} 
 'ocean.thkcello.tavg-ol-hxy-sea.mon.glb'        : {'vertical': 'sum', 'timeseries': 'sum'}
-'ocean.thkcello.ti-ol-hxy-sea.fx.glb'           
+'ocean.thkcello.ti-ol-hxy-sea.fx.glb'           : {'vertical': 'sum', 'cmap': 'cmocean.cm.deep'}
 'ocean.tob.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.thermal'}
 'ocean.tos.tavg-u-hm-sea.mon.glb'               
 'ocean.tos.tavg-u-hxy-sea.day.glb'              : {'cmap': 'cmocean.cm.thermal'}
@@ -87,7 +87,7 @@
 'ocean.vo.tavg-ol-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'} 
 'ocean.volcello.tavg-ol-hxy-sea.mon.glb'        : {'vertical': 'sum', 'timeseries': 'sum', 'cmap': 'cmocean.cm.deep'} 
 'ocean.volcello.tavg-ol-hxy-sea.yr.glb'         : {'vertical': 'sum', 'timeseries': 'sum', 'cmap': 'cmocean.cm.deep'} 
-'ocean.volcello.ti-ol-hxy-sea.fx.glb'           : {'vertical': 'sum', 'timeseries': 'sum', 'cmap': 'cmocean.cm.deep'} 
+'ocean.volcello.ti-ol-hxy-sea.fx.glb'           : {'vertical': 'sum', 'cmap': 'cmocean.cm.deep'} 
 'ocean.volo.tavg-u-hm-sea.mon.glb'              : {'cmap': 'cmocean.cm.deep'} 
 'ocean.vsf.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
 'ocean.wfo.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
