@@ -15,9 +15,9 @@
 'ocean.dyto.ti-u-hxy-u.fx.glb'                  
 'ocean.dyuo.ti-u-hxy-u.fx.glb'                  
 'ocean.dyvo.ti-u-hxy-u.fx.glb'                  
-'ocean.evspsbl.tavg-u-hxy-ifs.mon.glb'          : {'mth': 'None'}
-'ocean.ficeberg.tavg-u-hxy-sea.mon.glb'         : {'cmap': 'cmocean.cm.rain'}
-'ocean.friver.tavg-u-hxy-sea.mon.glb'           : {'cmap': 'cmocean.cm.rain'}
+'ocean.evspsbl.tavg-u-hxy-ifs.mon.glb'          : {'cmap': "mpl.colormaps['Blues_r']"}
+'ocean.ficeberg.tavg-u-hxy-sea.mon.glb'         : {'cmap': 'cmocean.cm.balance'}
+'ocean.friver.tavg-u-hxy-sea.mon.glb'           : {'cmap': "mpl.colormaps['Blues']"}
 'ocean.hfacrossline.tavg-u-ht-sea.mon.glb'      
 'ocean.hfbasin.tavg-u-hyb-sea.mon.glb'          
 'ocean.hfbasinpadv.tavg-u-hyb-sea.mon.glb'      
@@ -89,7 +89,7 @@
 'ocean.volcello.tavg-ol-hxy-sea.yr.glb'         : {'vertical': 'sum', 'timeseries': 'sum', 'cmap': 'cmocean.cm.deep'} 
 'ocean.volcello.ti-ol-hxy-sea.fx.glb'           : {'vertical': 'sum', 'timeseries': 'sum', 'cmap': 'cmocean.cm.deep'} 
 'ocean.volo.tavg-u-hm-sea.mon.glb'              : {'cmap': 'cmocean.cm.deep'} 
-'ocean.vsf.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.haline'}
+'ocean.vsf.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
 'ocean.wfo.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
 'ocean.wmo.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.speed'} 
 'ocean.wo.tavg-ol-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'} 
