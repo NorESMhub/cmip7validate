@@ -8,7 +8,7 @@
 title                       : cmip7validate  # The title of the book. Will be placed in the left navbar.
 author                      : Yanchun He  # The author of the book
 copyright                   : "2026"  # Copyright year to be placed in the footer
-logo                        : noresm3validation.png  # A path to the book logo
+logo                        : data/logo.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -32,7 +32,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: false
-  use_repository_button: false
+  use_repository_button: true
   home_page_in_navbar: true
 
 exclude_patterns:

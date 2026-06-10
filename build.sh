@@ -22,9 +22,6 @@ fi
 
 # set permission
 umask 002
-if [ ! -d ${www_root}/${source_id}/${experiment_id} ]; then
-  mkdir -p ${www_root}/${source_id}/${experiment_id}
-fi
 
 # activate conda
 source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
@@ -52,6 +49,3 @@ else
   echo "https://ns9560k.web.sigma2.no/datalake/diagnostics/cmip7validate/${source_id}/${experiment_id}.${version}"
 fi
 
-# move generated pynb to tmp
-[ ! -d tmp ] && mkdir tmp
-[ -f intro.ipynb ] && mv *.ipynb tmp/
