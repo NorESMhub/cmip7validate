@@ -3,9 +3,9 @@
 
 ##################################################################################
 cmorout         : /scratch/yanchun/cmorout
-source_id       : DUMMY-MODEL
+source_id       : UKESM1-0-LL
 experiment_id   : piControl
 variant_label   : r1i1p1f1
-grid_label      : g999
-version         : v20260601
+grid_label      : g99
+version         : v20260611
 
