@@ -25,10 +25,10 @@
 'ocean.hfbasinpmdiff.tavg-u-hyb-sea.mon.glb'    
 'ocean.hfbasinpsmadv.tavg-u-hyb-sea.mon.glb'    
 'ocean.hfds.tavg-u-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'}
-'ocean.hfx.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.speed'} 
-'ocean.hfx.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'} 
-'ocean.hfy.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.speed'} 
-'ocean.hfy.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'}
+'ocean.hfx.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'} 
+'ocean.hfx.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'} 
+'ocean.hfy.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'} 
+'ocean.hfy.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
 'ocean.masscello.tavg-ol-hxy-sea.mon.glb'       : {'vertical': 'sum', 'timeseries': 'sum'}
 'ocean.masso.tavg-u-hm-sea.mon.glb'             
 'ocean.mfo.tavg-u-ht-sea.mon.glb'               
@@ -50,10 +50,10 @@
 'ocean.sfacrossline.tavg-u-ht-sea.mon.glb'      
 'ocean.sfdsi.tavg-u-hxy-sea.mon.glb'            : {'cmap': 'cmocean.cm.balance'}
 'ocean.sftof.ti-u-hxy-u.fx.glb'                 
-'ocean.sfx.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.speed'}
-'ocean.sfx.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'} 
-'ocean.sfy.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.speed'}
-'ocean.sfy.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.speed'}
+'ocean.sfx.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'}
+'ocean.sfx.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'} 
+'ocean.sfy.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'}
+'ocean.sfy.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
 'ocean.siflfwbot.tavg-u-hxy-sea.mon.glb'        : {'cmap': 'cmocean.cm.balance'}
 'ocean.so.tavg-ol-hm-sea.mon.glb'               : {'cmap': 'cmocean.cm.haline'} 
 'ocean.so.tavg-ol-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.haline'} 
