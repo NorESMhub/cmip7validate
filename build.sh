@@ -44,7 +44,7 @@ if [ $gid == 'null' ]; then
   echo "It is not copied to ${www_root} since you do not blong to the 'ipcc' group or 'ns9560k' group."
 else
   mkdir -p ${www_root}/${source_id}/${experiment_id}.${version}
-  rsync -au _build/html/ ${www_root}/${source_id}/${experiment_id}.${version}/
+  rsync -au --chown=$USER:$gid _build/html/ ${www_root}/${source_id}/${experiment_id}.${version}/
   echo 'Gedneratd diagnostics is at:'
   echo "https://ns9560k.web.sigma2.no/datalake/diagnostics/cmip7validate/${source_id}/${experiment_id}.${version}"
 fi
