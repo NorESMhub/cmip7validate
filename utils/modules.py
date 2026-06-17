@@ -1,7 +1,6 @@
-import xarray as xr
-import numpy as np
-
 def load_grid_vertex(grid_file, grid_type='p'):
+    import xarray as xr
+    import numpy as np
     """
     Load vertex data of BLOM ocean grid.
 
@@ -63,8 +62,7 @@ def read_variables(ifile='data/methods.txt'):
     
     return dicts
 
-def read_compound_name(infile='data/variables.nml'):
-
+def read_compound_names(infile='data/variables.nml'):
     import re
     strs = []
     pattern = r"'((?:[^']*\.){4}[^']*)'"
