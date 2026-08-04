@@ -50,6 +50,8 @@ def read_variables(ifile='data/methods.txt'):
     # Read line by line and split back into pairs
     with open(ifile, "r") as file:
         for line in file:
+            if line.startswith('!'):    # Skip comment lines
+                continue   
             if line.strip():  # Skip empty lines
                 if ":" in line:
                     key_str, value_str = line.strip().split(":", 1)

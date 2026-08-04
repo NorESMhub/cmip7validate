@@ -10,3 +10,5 @@ chapters:
   - file: ocean_3D
   - file: ocean_line
   - file: ocean_zonal
+  - file: ocnBgchem_2D
+  - file: ocnBgchem_3D
