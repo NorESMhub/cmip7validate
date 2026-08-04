@@ -1,8 +1,7 @@
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
-from matplotlib.colors import BoundaryNorm, LogNorm
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 def plot_map2d(lon, lat, var, proj='PlateCarree', norm=None, cmap=mpl.colormaps['viridis']):
     """

@@ -1,6 +1,6 @@
 def load_grid_vertex(grid_file, grid_type='p'):
-    import xarray as xr
     import numpy as np
+    import xarray as xr
     """
     Load vertex data of BLOM ocean grid.
 
