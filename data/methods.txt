@@ -58,7 +58,7 @@
     'ocean.sfy.tavg-ol-hxy-sea.mon.glb'             : {'cmap': 'cmocean.cm.balance'}
     'ocean.sfy.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.balance'}
     'ocean.siflfwbot.tavg-u-hxy-sea.mon.glb'        : {'cmap': 'cmocean.cm.balance'}
-    'ocean.so.tavg-ol-hm-sea.mon.glb'               : {'cmap': 'cmocean.cm.haline'} 
+    'ocean.so.tavg-u-hm-sea.mon.glb'               : {'cmap': 'cmocean.cm.haline'} 
     'ocean.so.tavg-ol-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.haline'} 
     'ocean.sob.tavg-u-hxy-sea.mon.glb'              : {'cmap': 'cmocean.cm.haline'}
     'ocean.sos.tavg-u-hm-sea.mon.glb'               : {'cmap': 'cmocean.cm.haline'}
@@ -73,7 +73,7 @@
     'ocean.thetao.tavg-d2000m-hxy-sea.mon.glb'      : {'cmap': 'cmocean.cm.thermal'}
     'ocean.thetao.tavg-d300m-hxy-sea.mon.glb'       : {'cmap': 'cmocean.cm.thermal'}
     'ocean.thetao.tavg-d700m-hxy-sea.mon.glb'       : {'cmap': 'cmocean.cm.thermal'}
-    'ocean.thetao.tavg-ol-hm-sea.mon.glb'           
+    'ocean.thetao.tavg-u-hm-sea.mon.glb'           
     'ocean.thetao.tavg-ol-hxy-sea.mon.glb'          : {'cmap': 'cmocean.cm.thermal'}
     'ocean.thetaot.tavg-u-hxy-sea.mon.glb'          : {'cmap': 'cmocean.cm.thermal'} 
     'ocean.thkcello.ti-ol-hxy-sea.fx.glb'           : {'vertical': 'sum', 'cmap': 'cmocean.cm.deep'}
@@ -111,8 +111,6 @@
     'ocnBgchem.detoc.tavg-ol-hxy-sea.mon.glb'           
     'ocnBgchem.dfe.tavg-ols-hxy-sea.mon.glb'            
     'ocnBgchem.dfe.tavg-ol-hxy-sea.mon.glb'             
-    'ocnBgchem.dissi13c.tavg-ols-hxy-sea.mon.glb'       
-    'ocnBgchem.dissi13c.tavg-ol-hxy-sea.mon.glb'        
     'ocnBgchem.dissic.tavg-ols-hxy-sea.mon.30S-90S'     
     'ocnBgchem.dissic.tavg-ol-hxy-sea.mon.glb'          
     'ocnBgchem.dissoc.tavg-ol-hxy-sea.mon.glb'          
@@ -131,7 +129,6 @@
     'ocnBgchem.expnob.tavg-u-hxy-sea.mon.glb'           
     'ocnBgchem.exppob.tavg-u-hxy-sea.mon.glb'           
     'ocnBgchem.expsiob.tavg-u-hxy-sea.mon.glb'          
-    'ocnBgchem.fg13co2.tavg-u-hxy-sea.mon.glb'          
     'ocnBgchem.fgco2.tavg-u-hxy-sea.mon.glb'            
     'ocnBgchem.fgdms.tavg-u-hxy-sea.mon.glb'            
     'ocnBgchem.frfe.tavg-u-hxy-sea.mon.glb'             
@@ -174,4 +171,5 @@
     'ocnBgchem.zooc.tavg-ols-hxy-sea.mon.30S-90S'       
     'ocnBgchem.zooc.tavg-ol-hxy-sea.mon.glb'            
 
+!
 
