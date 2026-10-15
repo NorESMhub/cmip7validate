@@ -14,4 +14,4 @@ dependencies:
   - python=3.13.3
   - sphinx=7.4.7
   - xarray=2025.4.0
-prefix: /nird/datalake/cmip7validate-env
+prefix: /nird/datalake/NS16000B/cmip7validate-env
