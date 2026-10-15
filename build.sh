@@ -28,9 +28,9 @@ source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
 conda activate /nird/datalake/NS16000B/cmip7validate-env
 
 # inject parameters
-for pynb in $(ls notebooks/*ipynb); do
-  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
-done
+#for pynb in $(ls notebooks/*ipynb); do
+#  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
+#done
 
 # build the book
 jupyter-book clean .
