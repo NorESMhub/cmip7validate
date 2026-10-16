@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 set -e
 
+# activate conda
+source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
+conda activate /nird/datalake/NS16000B/cmip7validate-env
+
 # get version from yml file
-source_id=$(cat params.yml |grep 'source_id' |cut -d: -f2 |sed 's/ //g')
-experiment_id=$(cat params.yml |grep 'experiment_id' |cut -d: -f2 |sed 's/ //g')
-variant_label=$(cat params.yml |grep 'variant_label' |cut -d: -f2 |sed 's/ //g')
-version=$(cat params.yml |grep 'version' |cut -d: -f2 |sed 's/ //g')
+cmorout=$(yq -r '.cmorout' params.yml)
+source_id=$(yq -r '.source_id' params.yml)
+experiment_id=$(yq -r '.experiment_id' params.yml)
+variant_label=$(yq -r '.variant_label' params.yml)
+version=$(yq -r '.version' params.yml)
 
 # set default value
+data_root=$cmorout/$source_id/$experiment_id/$version
 www_root=/nird/datalake/NS9560K/www/diagnostics/cmip7validate
 exp_root=${www_root}
 
@@ -19,13 +25,8 @@ elif id |grep 'ns9560k' ; then
 else
   gid='null'
 fi
-
 # set permission
 umask 002
-
-# activate conda
-source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
-conda activate /nird/datalake/NS16000B/cmip7validate-env
 
 # inject parameters
 #for pynb in $(ls notebooks/*ipynb); do

@@ -6,7 +6,11 @@ dependencies:
   - cartopy=0.25.0
   - cftime=1.6.5
   - cmocean=4.0.3
+  - cmip7-repack=1.1.1
+  - compliance-checker=6.1.0
+  - dask=2026.8.0
   - jupyter-book=1.0.4.post1
+  - jq=1.8.2
   - matplotlib=3.10.3
   - nc-time-axis=1.4.1
   - netcdf4=1.7.4
@@ -14,4 +18,5 @@ dependencies:
   - python=3.13.3
   - sphinx=7.4.7
   - xarray=2025.4.0
+  - yq=4.4.5
 prefix: /nird/datalake/NS16000B/cmip7validate-env
