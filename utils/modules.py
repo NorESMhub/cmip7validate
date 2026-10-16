@@ -71,6 +71,8 @@ def read_compound_names(infile='data/variables.nml'):
     with open(infile) as f:
         lines = f.readlines()
         for line in lines:
+            if line.lstrip().startswith('!'):
+                continue
             str = re.findall(pattern, line)
             if len(str) > 0:
                 strs.append(str[0])
