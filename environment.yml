@@ -19,4 +19,6 @@ dependencies:
   - sphinx=7.4.7
   - xarray=2025.4.0
   - yq=4.4.5
+  - pip:
+    - esgf-qa
 prefix: /nird/datalake/NS16000B/cmip7validate-env
