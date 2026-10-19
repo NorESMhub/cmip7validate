@@ -5,7 +5,7 @@ set -e
 source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
 conda activate /nird/datalake/NS16000B/cmip7validate-env
 
-# get version from yml file
+# parse yml file
 cmorout=$(yq -r '.cmorout' params.yml)
 source_id=$(yq -r '.source_id' params.yml)
 experiment_id=$(yq -r '.experiment_id' params.yml)
@@ -34,8 +34,10 @@ umask 002
 #done
 
 # build the book
+rm -f build.log execute.log
+export PYTHONNOUSERSITE=1
 jupyter-book clean .
-jupyter-book build -n .
+jupyter-book build -v -n . | tee build.log
 
 # publish
 chmod -R g+w _build/html
