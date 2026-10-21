@@ -10,10 +10,12 @@ dependencies:
   - compliance-checker=6.1.0
   - dask=2026.8.0
   - jupyter-book=1.0.4.post1
+  - jupyter_contrib_nbextensions=0.7.0
   - jq=1.8.2
   - matplotlib=3.10.3
   - nc-time-axis=1.4.1
   - netcdf4=1.7.4
+  - nbconvert=7.17.2
   - papermill=2.7.0
   - pip
   - python=3.13.3
