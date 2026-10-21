@@ -37,9 +37,11 @@ html:
 
 # Cell timeout
 execute:
-  execute_notebooks: auto
+  execute_notebooks: cache
   timeout: -1      # seconds; or -1 for no limit
 
 # Exclude building files
 exclude_patterns:
   - README.md
+ #- ocean_?D.ipynb
+ #- ocnBgchem_?D.ipynb
