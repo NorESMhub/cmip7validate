@@ -15,10 +15,13 @@ dependencies:
   - nc-time-axis=1.4.1
   - netcdf4=1.7.4
   - papermill=2.7.0
+  - pip
   - python=3.13.3
+  - pyprojroot=0.3.0
   - sphinx=7.4.7
   - xarray=2025.4.0
   - yq=4.4.5
   - pip:
     - esgf-qa
+    - -e .
 prefix: /nird/datalake/NS16000B/cmip7validate-env
