@@ -43,5 +43,6 @@ execute:
 # Exclude building files
 exclude_patterns:
   - README.md
+  - test/*.ipynb
  #- ocean_?D.ipynb
  #- ocnBgchem_?D.ipynb

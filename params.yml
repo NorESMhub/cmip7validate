@@ -2,9 +2,8 @@
 #     Configuration for the experiment
 # ---------------------------------------- #
 cmorout         : /scratch/yanchun/cmorout
-  #cmorout         : /scratch/agu002/cmorout
 source_id       : NorESM3-LM
 experiment_id   : piControl
 variant_label   : r1i1p1f1
-version         : v20261014
+version         : v20261021
 
