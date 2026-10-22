@@ -33,11 +33,22 @@ umask 002
 #  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
 #done
 
+# reset logs
+rm -f logs/{${source_id}.${experiment_id}.${variant_label}.${version}.build.log, {${source_id}.${experiment_id}.${variant_label}.${version}.execute.log}
 # build the book
-rm -f build.log execute.log
 export PYTHONNOUSERSITE=1
 #jupyter-book clean .
 jupyter-book build -v -n . | tee build.log
+
+#jupyter-book build -v -n --all --builder html . |tee build.log  # rebuild html only
+#jupyter-book build --path-output . ocean_fx.ipynb    # build single page (output _build/_page)
+#jupyter-book build --builder html ocean_fx.ipynb
+
+mv build.log logs/{${source_id}.${experiment_id}.${variant_label}.${version}.build.log
+mv execute.log logs/{${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
+
+# backup (for rerun from cache)
+#cp params.yml _build/jupyter_execute
 
 # publish
 chmod -R g+w _build/html
