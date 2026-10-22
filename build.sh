@@ -33,9 +33,8 @@ umask 002
 #  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
 #done
 
-# reset logs
-rm -f logs/{${source_id}.${experiment_id}.${variant_label}.${version}.build.log, {${source_id}.${experiment_id}.${variant_label}.${version}.execute.log}
 # build the book
+rm -f build.log execute.log
 export PYTHONNOUSERSITE=1
 #jupyter-book clean .
 jupyter-book build -v -n . | tee build.log
