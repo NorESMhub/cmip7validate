@@ -37,7 +37,7 @@ html:
 
 # Cell timeout
 execute:
-  execute_notebooks: cache
+  execute_notebooks: auto
   timeout: -1      # seconds; or -1 for no limit
 
 # Exclude building files
