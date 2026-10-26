@@ -44,5 +44,7 @@ execute:
 exclude_patterns:
   - README.md
   - test/*.ipynb
- #- ocean_?D.ipynb
- #- ocnBgchem_?D.ipynb
+# - ocean_*.ipynb
+# - ocean_?D.ipynb
+# - ocnBgchem_3D.ipynb
+# - ocnBgchem_?D.ipynb

@@ -43,8 +43,8 @@ jupyter-book build -v -n . | tee build.log
 #jupyter-book build --path-output . ocean_fx.ipynb    # build single page (output _build/_page)
 #jupyter-book build --builder html ocean_fx.ipynb
 
-[ -f build.log ] && mv build.log logs/{${source_id}.${experiment_id}.${variant_label}.${version}.build.log
-[ -f execute.log ] && mv execute.log logs/{${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
+[ -f build.log ] && mv build.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.build.log
+[ -f execute.log ] && mv execute.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
 
 # backup (for rerun from cache)
 #cp params.yml _build/jupyter_execute
