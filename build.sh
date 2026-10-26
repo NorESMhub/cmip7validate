@@ -26,7 +26,7 @@ else
   gid='null'
 fi
 # set permission
-umask 002
+umask 022
 
 # inject parameters
 #for pynb in $(ls notebooks/*ipynb); do
