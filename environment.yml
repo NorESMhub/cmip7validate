@@ -12,6 +12,7 @@ dependencies:
   - dask=2026.8.0
   - jupyter-book=1.0.4.post1
   - jupyterlab=4.6.4
+  - jupyterlab_vim=4.1.4
   - jupyter_contrib_nbextensions=0.7.0
   - jq=1.8.2
   - matplotlib=3.10.3
