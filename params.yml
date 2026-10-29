@@ -1,9 +1,12 @@
 # ---------------------------------------- #
 #     Configuration for the experiment
 # ---------------------------------------- #
-cmorout         : /scratch/yanchun/cmorout
-source_id       : NorESM3-LM
-experiment_id   : piControl
-variant_label   : r1i1p1f1
-version         : v20261021
-
+datasets:
+  cmorout         : /nird/datapeak/NS9034K/CMIP7      # root of cmorized out
+  source_id       : NorESM3-LM
+  experiment_id   : piControl
+  variant_label   : r1i1p1f1
+  version         : v20261028
+cache:
+  root            : /scratch/yanchun/cmip7validate    # root of cmip7validate climo/ts cache
+  overwrite       : False

@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : cmip7validate       # The title of the book. Will be placed in the left navbar.
-author                      : noresm-ncc@met.no   # The author of the book
+author                      : NorESM Consortium   # The author of the book
 copyright                   : "2026"              # Copyright year to be placed in the footer
 logo                        : assets/logo.png       # A path to the book logo
 

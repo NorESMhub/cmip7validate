@@ -6,14 +6,14 @@ source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
 conda activate /nird/datalake/NS16000B/cmip7validate-env
 
 # parse yml file
-cmorout=$(yq -r '.cmorout' params.yml)
-source_id=$(yq -r '.source_id' params.yml)
-experiment_id=$(yq -r '.experiment_id' params.yml)
-variant_label=$(yq -r '.variant_label' params.yml)
-version=$(yq -r '.version' params.yml)
+cmorout=$(yq -r '.datasets.cmorout' params.yml)
+source_id=$(yq -r '.datasets.source_id' params.yml)
+experiment_id=$(yq -r '.datasets.experiment_id' params.yml)
+variant_label=$(yq -r '.datasets.variant_label' params.yml)
+version=$(yq -r '.datasets.version' params.yml)
 
 # set default value
-data_root=$cmorout/$source_id/$experiment_id/$version
+data_root=$cmorout/$source_id/$experiment_id/$variant_label/$version
 
 # repack netcdf file to have solidated metada and large enough chunk size
 if [ -d $data_root ] && [ -w $data_root ] ; then

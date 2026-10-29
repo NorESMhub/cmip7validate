@@ -4,24 +4,25 @@ channels:
   - nodefaults
 dependencies:
   - cartopy=0.25.0
-  - cftime=1.6.5
   - cfchecker=4.1.0
-  - cmocean=4.0.3
+  - cftime=1.6.5
   - cmip7-repack=1.1.1
+  - cmocean=4.0.3
   - compliance-checker=6.1.0
   - dask=2026.8.0
-  - jupyter-book=1.0.4.post1
-  - jupyterlab=4.6.4
-  - jupyter_contrib_nbextensions=0.7.0
   - jq=1.8.2
+  - jupyter-book=1.0.4.post1
+  - jupyter_contrib_nbextensions=0.7.0
+  - jupyterlab=4.6.4
+  - jupyterlab_vim=4.1.4
   - matplotlib=3.10.3
+  - nbconvert=7.17.2
   - nc-time-axis=1.4.1
   - netcdf4=1.7.4
-  - nbconvert=7.17.2
   - papermill=2.7.0
-  - pip
-  - python=3.13.3
+  - pip=26.2.2
   - pyprojroot=0.3.0
+  - python=3.13.3
   - sphinx=7.4.7
   - xarray=2025.4.0
   - yq=4.4.5
