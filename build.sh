@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
+echo "-------------------------------"
+echo "cmip7validate starts:"
+date | tee build.log
+echo "-------------------------------"
+
 # activate conda
 source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
 conda activate /nird/datalake/NS16000B/cmip7validate-env
@@ -43,10 +48,6 @@ jupyter-book build -v -n . | tee build.log
 #jupyter-book build --path-output . ocean_fx.ipynb    # build single page (output _build/_page)
 #jupyter-book build --builder html ocean_fx.ipynb
 
-[ ! -d logs ] && mkdir logs
-[ -f build.log ] && mv build.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.build.log
-[ -f execute.log ] && mv execute.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
-
 # backup (for rerun from cache)
 #cp params.yml _build/jupyter_execute
 
@@ -64,4 +65,13 @@ fi
 # writable until variant_label folder for all group members
 chmod g+w ${www_root}/${www_subdir}/../
 
+
+echo "-------------------------------"
+echo "cmip7validate ends:"
+date | tee build.log
+echo "-------------------------------"
+
+[ ! -d logs ] && mkdir logs
+[ -f build.log ] && mv build.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.build.log
+[ -f execute.log ] && mv execute.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
 

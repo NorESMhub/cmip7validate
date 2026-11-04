@@ -70,13 +70,15 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+_build/
 
 # PyBuilder
 .pybuilder/
 target/
 
 # Jupyter Notebook
+.jupyter
+.jupyter_runtime
 .ipynb_checkpoints
 
 # IPython
