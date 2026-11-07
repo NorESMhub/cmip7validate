@@ -13,7 +13,7 @@ dependencies:
   - jq=1.8.2
   - jupyter-book=1.0.4.post1
   - jupyter_contrib_nbextensions=0.7.0
-  - jupyterlab=4.6.4
+  - jupyterlab=4.6.6
   - jupyterlab_vim=4.1.4
   - matplotlib=3.10.3
   - nbconvert=7.17.2

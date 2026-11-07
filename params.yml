@@ -7,6 +7,8 @@ datasets:
   experiment_id   : piControl
   variant_label   : r1i1p1f1
   version         : v20261028
+webpage:
+  www_root        : /nird/datalake/NS9560K/www/diagnostics/cmip7validate
 cache:
   root            : /scratch/yanchun/cmip7validate    # root of cmip7validate climo/ts cache
-  overwrite       : False
+  overwrite       : False                             # logic switch to overwrite cached climatologies and time series

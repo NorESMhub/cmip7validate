@@ -16,10 +16,10 @@ source_id=$(yq -r '.datasets.source_id' params.yml)
 experiment_id=$(yq -r '.datasets.experiment_id' params.yml)
 variant_label=$(yq -r '.datasets.variant_label' params.yml)
 version=$(yq -r '.datasets.version' params.yml)
+www_root=$(yq -r '.webpage.www_root' params.yml)
 
 # set default value
 data_root=$cmorout/$source_id/$experiment_id/$variant_label/$version
-www_root=/nird/datalake/NS9560K/www/diagnostics/cmip7validate
 www_subdir=${source_id}/${experiment_id}/${variant_label}/${version}
 
 # check group id

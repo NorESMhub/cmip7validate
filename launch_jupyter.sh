@@ -24,6 +24,7 @@ fi
 
 # Launch
 export PYTHONNOUSERSITE=1
+export JUPYTER_RUNTIME_DIR=/tmp/jupyter_runtime
 unset PYTHONPATH
 cd "${PROJECT_DIR}"
 exec python -m jupyter lab \
