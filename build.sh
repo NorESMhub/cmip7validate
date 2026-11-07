@@ -41,8 +41,8 @@ umask 022
 # build the book
 rm -f build.log execute.log
 export PYTHONNOUSERSITE=1
-jupyter-book clean .
-jupyter-book build -v -n . | tee build.log
+jupyter-book clean notebooks
+jupyter-book build --config ./_config.yml -v -n notebooks | tee build.log
 
 #jupyter-book build -v -n --all --builder html . |tee build.log  # rebuild html only
 #jupyter-book build --path-output . ocean_fx.ipynb    # build single page (output _build/_page)
