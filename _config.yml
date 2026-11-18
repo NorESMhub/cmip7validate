@@ -43,7 +43,7 @@ html:
 
 # Cell timeout
 execute:
-  execute_notebooks: auto
+  execute_notebooks: force
   timeout: -1      # seconds; or -1 for no limit
 
 # Exclude building files
