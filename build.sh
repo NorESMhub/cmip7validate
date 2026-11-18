@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-echo "-------------------------------"
-echo "cmip7validate starts:"
-date | tee build.log
-echo "-------------------------------"
+# reset log file; use append mode for tee
+log_subdir=logs/cmip7validate
+mkdir -p ${log_subdir}
+rm -f build.log execute.log
+tee() {
+    command tee -a "$@"
+}
+
+echo "-------------------------------" |tee build.log execute.log
+echo "cmip7validate starts:" |tee build.log execute.log
+date | tee build.log execute.log
+echo "-------------------------------" |tee build.log execute.log
 
 # activate conda
 source /cluster/software/Miniforge3/24.1.2-0/etc/profile.d/conda.sh
@@ -39,9 +47,8 @@ umask 022
 #done
 
 # build the book
-rm -f build.log execute.log
 export PYTHONNOUSERSITE=1
-jupyter-book clean notebooks
+jupyter-book clean --all notebooks |tee build.log
 jupyter-book build --config ./_config.yml -v -n notebooks | tee build.log
 
 #jupyter-book build -v -n --all --builder html . |tee build.log  # rebuild html only
@@ -53,25 +60,28 @@ jupyter-book build --config ./_config.yml -v -n notebooks | tee build.log
 
 # publish
 if [ $gid == 'null' ]; then
-  echo "Generated diagnostics is under:"
-  echo "$pwd/_build/html"
-  echo "It is not copied to ${www_root} since you do not blong to the 'ipcc' group or 'ns9560k' group."
+  echo "Generated diagnostics is under:" |tee build.log
+  echo "$pwd/_build/html" |tee build.log
+  echo "It is not copied to ${www_root} since you do not blong to the 'ipcc' group or 'ns9560k' group." |tee build.log
 else
   mkdir -p ${www_root}/${www_subdir}
   rsync -au --chown=$USER:$gid --delete _build/html/ ${www_root}/${www_subdir}/
-  echo 'Gedneratd diagnostics is at:'
-  echo "https://ns9560k.web.sigma2.no/datalake/diagnostics/cmip7validate/${www_subdir}"
+  echo 'Generated diagnostics are at:' |tee build.log
+  echo "${www_root}/${www_subdir}" |tee build.log
+  if [ ${www_root} == '/nird/datalake/NS9560K/www/diagnostics/cmip7validate' ]; then
+    echo "https://ns9560k.web.sigma2.no/datalake/diagnostics/cmip7validate/${www_subdir}" |tee build.log
+  fi
 fi
 # writable until variant_label folder for all group members
 chmod g+w ${www_root}/${www_subdir}/../
 
 
-echo "-------------------------------"
-echo "cmip7validate ends:"
-date | tee build.log
-echo "-------------------------------"
+echo "-------------------------------" |tee build.log execute.log
+echo "cmip7validate ends:" |tee build.log execute.log
+date | tee -a build.log execute.log
+echo "-------------------------------" |tee build.log execute.log
 
 [ ! -d logs ] && mkdir logs
-[ -f build.log ] && mv build.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.build.log
-[ -f execute.log ] && mv execute.log logs/${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
+[ -f build.log ] && mv build.log ${log_subdir}/${source_id}.${experiment_id}.${variant_label}.${version}.build.log
+[ -f execute.log ] && mv execute.log ${log_subdir}/${source_id}.${experiment_id}.${variant_label}.${version}.execute.log
 
