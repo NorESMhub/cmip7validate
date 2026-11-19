@@ -48,7 +48,7 @@ umask 022
 
 # build the book
 export PYTHONNOUSERSITE=1
-jupyter-book clean --all notebooks |tee build.log
+jupyter-book clean --all . |tee build.log
 jupyter-book build --config ./_config.yml -v -n notebooks | tee build.log
 
 #jupyter-book build -v -n --all --builder html . |tee build.log  # rebuild html only
