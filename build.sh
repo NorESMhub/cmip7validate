@@ -46,6 +46,9 @@ umask 022
 #  papermill --prepare-only -f params.yml $pynb $(basename $pynb)
 #done
 
+# run preprocess_cache.py
+python preprocess_cache.py | tee execute.log
+
 # build the book
 export PYTHONNOUSERSITE=1
 jupyter-book clean --all . |tee build.log

@@ -11,4 +11,7 @@ webpage:
   www_root        : /nird/datalake/NS9560K/www/diagnostics/cmip7validate
 cache:
   root            : /scratch/yanchun/cmip7validate    # root of cmip7validate climo/ts cache
-  overwrite       : False                             # logic switch to overwrite cached climatologies and time series
+  # overwrite cached climatologies and time series, True/False
+  overwrite       : False                             
+  # number of worker processes used by preprocess_cache.py (1 = serial)
+  jobs            : 8
