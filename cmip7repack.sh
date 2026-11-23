@@ -62,7 +62,7 @@ fi
 # ---------------------------------------------------------------------------
 # number of files to process in parallel
 # ---------------------------------------------------------------------------
-num_threads=${num_threads:-${SLURM_CPUS_PER_TASK:-8}}
+num_threads=${num_threads:-${SLURM_CPUS_PER_TASK:-32}}
 if ! [[ $num_threads =~ ^[0-9]+$ ]] || (( num_threads < 1 )); then
   echo "ERROR: invalid num_threads='$num_threads'" >&2
   exit 1
@@ -204,7 +204,6 @@ do
   # or replace random suffix with .log
   #mv "${logfile}" "logs/cmip7repack/${logfile%.*}.log"
 done
-mv "$fail_log" "$attempt_log" "$skip_log" logs/cmip7repack/
 
 if (( nfailed > 0 )); then
   echo "cmip7repack finished WITH ERRORS: $data_root" >&2
