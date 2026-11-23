@@ -47,7 +47,7 @@ umask 022
 #done
 
 # run preprocess_cache.py
-python preprocess_cache.py | tee execute.log
+python preprocess_cache.py
 
 # build the book
 export PYTHONNOUSERSITE=1

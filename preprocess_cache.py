@@ -47,6 +47,31 @@ root_path = Path(here())
 
 from cmip7validate.utils import read_compound_names, read_variables
 
+# logging
+# The main process logs to execute.log *and* stdout; worker processes log to
+# execute.log only (see init_worker), so that parallel output does not pollute
+# the terminal.  Both use the same format so execute.log stays readable.
+LOG_FILE = root_path.joinpath("execute.log")
+LOG_FORMAT = "%(asctime)s\t%(message)s"
+LOG_DATEFMT = "%Y-%m-%d %H:%M"
+
+
+def _file_handler() -> logging.Handler:
+    """Handler that appends everything (DEBUG and up) to execute.log."""
+    handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(logging.Formatter(LOG_FORMAT, LOG_DATEFMT))
+    return handler
+
+
+def _stdout_handler() -> logging.Handler:
+    """Handler that writes INFO and up to stdout."""
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(logging.Formatter(LOG_FORMAT, LOG_DATEFMT))
+    return handler
+
+
 log = logging.getLogger("preprocess")
 
 # grid labels of the cmorized files
@@ -326,25 +351,25 @@ def report_result(res: dict) -> None:
 
 
 def init_worker() -> None:
-    """Make sure workers log the same way when the 'spawn' start method is used."""
-    if not logging.getLogger().handlers:
-        logging.basicConfig(
-            level=logging.INFO,
-            format="%(asctime)s\t%(processName)s\t%(message)s",
-            datefmt="%Y-%m-%d %H:%M",
-        )
+    """Configure worker logging: execute.log only, never stdout.
+
+    With the 'fork' start method the workers inherit the main process' logging
+    setup (including its stdout handler), so ``force=True`` is used to drop the
+    inherited handlers and install a file-only handler instead.
+    """
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=LOG_FORMAT,
+        datefmt=LOG_DATEFMT,
+        handlers=[_file_handler()],
+        force=True,
+    )
 
 
 # --------------------------------------------------------------------------- #
 # main
 # --------------------------------------------------------------------------- #
 def main() -> int:
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s\t%(message)s",
-        datefmt="%Y-%m-%d %H:%M",
-        force=True,
-    )
 
     params_file = root_path.joinpath("params.yml")
     with open(params_file) as f:
@@ -377,12 +402,28 @@ def main() -> int:
         jobs=cache_param.get("jobs", 1),
     )
 
+    # main process: execute.log (DEBUG and up) + stdout (INFO and up)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=LOG_FORMAT,
+        datefmt=LOG_DATEFMT,
+        handlers=[_file_handler(), _stdout_handler()],
+        force=True,
+    )
     log.info("config:    %s", params_file)
     log.info("dataset:   %s/%s/%s/%s", source_id, experiment_id, variant_label, version)
     log.info("data:      %s", settings.data_path)
     log.info("climo:     %s", settings.climo_path)
     log.info("ts:        %s", settings.ts_path)
     log.info("overwrite: %s  (jobs=%d)", settings.overwrite, settings.jobs)
+    # reset to only to file
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=LOG_FORMAT,
+        datefmt=LOG_DATEFMT,
+        handlers=[_file_handler()],
+        force=True,
+    )
 
     if not settings.data_path.is_dir():
         log.error("data path does not exist: %s", settings.data_path)
@@ -441,7 +482,14 @@ def main() -> int:
     written = sum(r["written"] for r in results)
     cached = sum(r["cached"] for r in results)
     skipped = sum(1 for r in results if r["status"] == "skipped")
-
+    # reset to main process logging: execute.log + stdout
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=LOG_FORMAT,
+        datefmt=LOG_DATEFMT,
+        handlers=[_file_handler(), _stdout_handler()],
+        force=True,
+    )
     log.info("--- --- ---")
     log.info("compound names: %d", len(tasks))
     log.info("cache files written: %d", written)
