@@ -12,6 +12,7 @@ webpage:
 cache:
   root            : /scratch/yanchun/cmip7validate    # root of cmip7validate climo/ts cache
   # overwrite cached climatologies and time series, True/False
+# overwrite       : True
   overwrite       : False                             
-  # number of worker processes used by preprocess_cache.py (1 = serial)
-  jobs            : 8
+  # number of worker processes used by preprocess_cache.py and cmip7repack (1 = serial)
+  num_threads     : 16      # number of threads

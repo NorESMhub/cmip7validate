@@ -91,7 +91,7 @@ class Settings:
     grid_label: str
     file_grid_label: str
     overwrite: bool
-    jobs: int
+    num_threads: int
 
 
 @dataclass(frozen=True)
@@ -399,7 +399,7 @@ def main() -> int:
         grid_label=GRID_LABEL,
         file_grid_label=FILE_GRID_LABEL,
         overwrite=cache_param.get("overwrite", False),
-        jobs=cache_param.get("jobs", 1),
+        num_threads=cache_param.get("num_threads", 1),
     )
 
     # main process: execute.log (DEBUG and up) + stdout (INFO and up)
@@ -415,7 +415,7 @@ def main() -> int:
     log.info("data:      %s", settings.data_path)
     log.info("climo:     %s", settings.climo_path)
     log.info("ts:        %s", settings.ts_path)
-    log.info("overwrite: %s  (jobs=%d)", settings.overwrite, settings.jobs)
+    log.info("overwrite: %s  (num_threads=%d)", settings.overwrite, settings.num_threads)
     # reset to only to file
     logging.basicConfig(
         level=logging.DEBUG,
@@ -450,8 +450,8 @@ def main() -> int:
     results: list[dict] = []
     failed: list[str] = []
 
-    if settings.jobs > 1:
-        with ProcessPoolExecutor(max_workers=settings.jobs, initializer=init_worker) as pool:
+    if settings.num_threads > 1:
+        with ProcessPoolExecutor(max_workers=settings.num_threads, initializer=init_worker) as pool:
             futures = {
                 pool.submit(process_task, task, settings, parea, pmask): task
                 for task in tasks

@@ -4,8 +4,7 @@
 # for the dataset described in params.yml.
 # Each parallel job checks one file and repacks it if needed.
 #
-# Usage:   ./cmip7repack.sh                # default 8 parallel jobs
-#          num_threads=4 ./cmip7repack.sh  # override
+# Usage:   ./cmip7repack.sh
 
 set -uo pipefail
 
@@ -42,6 +41,7 @@ source_id=$(yq -r '.datasets.source_id' params.yml)
 experiment_id=$(yq -r '.datasets.experiment_id' params.yml)
 variant_label=$(yq -r '.datasets.variant_label' params.yml)
 version=$(yq -r '.datasets.version' params.yml)
+num_threads=$(yq -r '.cache.num_threads' params.yml)
 
 for var in cmorout source_id experiment_id variant_label version; do
   if [[ -z ${!var} || ${!var} == "null" ]]; then
@@ -62,7 +62,10 @@ fi
 # ---------------------------------------------------------------------------
 # number of files to process in parallel
 # ---------------------------------------------------------------------------
-num_threads=${num_threads:-${SLURM_CPUS_PER_TASK:-32}}
+
+# input as parameter
+#num_threads=${num_threads:-${SLURM_CPUS_PER_TASK:-32}}
+
 if ! [[ $num_threads =~ ^[0-9]+$ ]] || (( num_threads < 1 )); then
   echo "ERROR: invalid num_threads='$num_threads'" >&2
   exit 1
