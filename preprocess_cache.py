@@ -155,7 +155,11 @@ def write_climo(
     # keep the original time coordinate so that the number of averaged
     # time steps can be recovered from the cache file
     ds_climo["time"] = ds["time"]
-    ds_climo.to_netcdf(out_file, unlimited_dims=["time"])
+    ds_climo.to_netcdf(
+        out_file,
+        unlimited_dims=["time"],
+        encoding={var: {"_FillValue": 1.0e20}},
+    )
 
 
 def write_ts(
