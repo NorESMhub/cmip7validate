@@ -203,7 +203,7 @@ mkdir -p logs/cmip7repack
 for logfile in  "$fail_log" "$attempt_log" "$skip_log"
 do
   # append .log extension
-  mv "$(basename ${logfile})" "logs/cmip7repack/${logfile}.log"
+  mv "${logfile}" "logs/cmip7repack/$(basename ${logfile})"
   # or replace random suffix with .log
   #mv "$(basename ${logfile})" "logs/cmip7repack/${logfile%.*}.log"
 done
