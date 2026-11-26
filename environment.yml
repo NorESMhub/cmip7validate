@@ -10,6 +10,8 @@ dependencies:
   - cmocean=4.0.3
   - compliance-checker=6.1.0
   - dask=2026.8.0
+  - esgprep
+  - esgvoc=7.0.0
   - jq=1.8.2
   - jupyter-book=1.0.4.post1
   - jupyter_contrib_nbextensions=0.7.0

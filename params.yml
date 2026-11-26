@@ -2,11 +2,11 @@
 #     Configuration for the experiment
 # ---------------------------------------- #
 datasets:
-  cmorout         : /nird/datapeak/NS9034K/CMIP7      # root of cmorized out
+  cmorout         : /nird/datapeak/NS9034K/.CMIP7      # root of cmorized out
   source_id       : NorESM3-LM
   experiment_id   : piControl
   variant_label   : r1i1p1f1
-  version         : v20261028
+  version         : v20261126
 webpage:
   www_root        : /nird/datalake/NS9560K/www/diagnostics/cmip7validate
 cache:
